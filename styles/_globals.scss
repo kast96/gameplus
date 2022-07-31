@@ -1,0 +1,44 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  min-height: 100%;
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--color-light-dark);
+  overflow-anchor: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: var(--container-offset);
+  padding-right: var(--container-offset);
+  max-width: var(--container-width);
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}

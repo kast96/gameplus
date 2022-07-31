@@ -1,0 +1,20 @@
+$padding: 25px;
+
+.container {
+    position: absolute;
+    top: 0;
+    left: -$padding;
+    right: -$padding;
+    min-height: 300px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 85px $padding 30px;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--color-light-dark);
+    transition: opacity 0.3s, visibility 0.3s;
+
+    &_opened {
+        opacity: 1;
+        visibility: visible;
+    }
+}
