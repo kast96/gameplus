@@ -16,5 +16,80 @@ $padding: 25px;
     &_opened {
         opacity: 1;
         visibility: visible;
+        cursor: default;
+    }
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 25px;
+    padding: 0;
+}
+
+.category {
+    display: block;
+
+    &:not(:last-child) {
+        margin-bottom: 22px;
+    }
+}
+
+.link {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    outline: none;
+    margin-bottom: 10px;
+
+    &_active {
+        opacity: 1;
+        font-weight: 600;
+
+        &:before {
+            display: block;
+        }
+    }
+
+    &:not(&_static):hover {
+        opacity: 1;
+    }
+
+    &:focus-visible {
+        opacity: 1;
+    }
+
+    svg {
+        position: relative;
+        width: 16px;
+        height: 20px;
+        margin-right: 8px;
+    }
+}
+
+.childs {
+    width: 100%;
+    padding: 0;
+
+    .item {
+        &:not(:last-child) {
+            margin-bottom: 6px;
+        }
+    }
+
+    .link {
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 0;
+
+        &_active {
+            font-weight: 400;
+        }
     }
 }

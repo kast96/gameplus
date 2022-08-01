@@ -1,5 +1,5 @@
 import s from './Burger.module.scss';
-import {FiMenu, FiX} from "react-icons/fi";
+import { FaTimes, FaBars } from "react-icons/fa";
 import { ButtonBase } from '../../../ui/ButtonBase/ButtonBase';
 import { getStateIsOpenedMenu } from '../../../../store/selectors';
 import { useSelector } from 'react-redux';
@@ -15,7 +15,7 @@ export const Burger: React.FC = () => {
 
 	return (
 		<ButtonBase className={s.burger} onClick={handleOpen}>
-      {isOpened ? <FiX /> : <FiMenu />}
+      {isOpened ? <FaTimes /> : <FaBars />}
     </ButtonBase>
 	)
 }
