@@ -1,18 +1,48 @@
 .header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10000;
-  background-color: var(--color-dark);
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10000;
+	background-color: var(--color-dark);
 }
 
 .container {
-  
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
 }
 
 .left {
-  position: relative;
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
+}
+
+.search,
+.right {
+	position: relative;
+	z-index: 2;
+}
+
+.link {
+	position: relative;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 500;
+	color: var(--color-white);
+	outline: none;
+	opacity: 0.6;
+	transition: color 0.3s;
+
+	@media (max-width: 768px) {
+		font-size: 15px;
+		line-height: 15px;
+		margin-right: 8px;
+	}
+
+	&:hover,
+	&:focus-visible {
+		opacity: 1;
+	}
 }

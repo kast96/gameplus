@@ -10,13 +10,13 @@ export const Dropdown: React.FC = () => {
 	const items = [
 		[
         	{href: '/', title: 'Главная', icon: <FaHome />},
-        	{href: '/contacts/', title: 'Контакты', icon: <FaAddressBook />},
+        	{href: '/contacts', title: 'Контакты', icon: <FaAddressBook />},
 		],
 		[
 			{title: 'По категриям', icon: <FaFolder />, childs: [
-				{href: '/categories/actions/', title: 'Actions'},
-				{href: '/categories/rpg/', title: 'RPG'},
-				{href: '/categories/shooters/', title: 'Shooters'},
+				{href: '/categories/actions', title: 'Actions'},
+				{href: '/categories/rpg', title: 'RPG'},
+				{href: '/categories/shooters', title: 'Shooters'},
 			]},
 		],
 	] as Array<Array<MenuItemType>>
