@@ -30,37 +30,39 @@ export const Dropdown: React.FC = () => {
 				{items.map((category, key) => {
 					return (
 						<li key={key} className={s.category}>
-							{category.map(item => {
-								const isActive = pathname === item.href;
-								return (
-									<li key={item.title} className={s.item}>
-										{item.href &&
-											<>
-												<Link href={item.href}>
-													<a className={classNames(s.link, isActive && s.link_active)}>
+							<ul>
+								{category.map(item => {
+									const isActive = pathname === item.href;
+									return (
+										<li key={item.title} className={s.item}>
+											{item.href &&
+												<>
+													<Link href={item.href}>
+														<a className={classNames(s.link, isActive && s.link_active)}>
+															{item.icon}
+															{item.title}
+														</a>
+													</Link>
+													{item.childs &&
+														<DropdownSubmenu childs={item.childs} />
+													}
+												</>
+											}
+											{!item.href &&
+												<>
+													<span className={classNames(s.link, s.link_static, isActive && s.link_active)}>
 														{item.icon}
 														{item.title}
-													</a>
-												</Link>
-												{item.childs &&
-													<DropdownSubmenu childs={item.childs} />
-												}
-											</>
-										}
-										{!item.href &&
-											<>
-												<span className={classNames(s.link, s.link_static, isActive && s.link_active)}>
-													{item.icon}
-													{item.title}
-												</span>
-												{item.childs &&
-													<DropdownSubmenu childs={item.childs} />
-												}
-											</>
-										}
-									</li>
-								)
-							})}
+													</span>
+													{item.childs &&
+														<DropdownSubmenu childs={item.childs} />
+													}
+												</>
+											}
+										</li>
+									)
+								})}
+							</ul>
 						</li>
 					)
 				})}
