@@ -4,7 +4,7 @@ import {actions} from '../store/actions';
 
 
 export const useActions = () => {
-    const dispatch = useDispatch()
+	const dispatch = useDispatch()
 
-    return {...bindActionCreators(actions, dispatch), dispatch}
+	return {...bindActionCreators(actions, dispatch), dispatch}
 }

@@ -1,0 +1,16 @@
+.footer {
+	background-color: var(--color-dark);
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.left {
+	margin-right: 16px;
+}

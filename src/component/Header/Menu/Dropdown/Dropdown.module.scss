@@ -71,16 +71,9 @@ $padding-mob: 15px;
     &_active {
         opacity: 1;
         font-weight: 600;
-
-        &:before {
-            display: block;
-        }
     }
 
-    &:not(&_static):hover {
-        opacity: 1;
-    }
-
+    &:not(&_static):hover,
     &:focus-visible {
         opacity: 1;
     }

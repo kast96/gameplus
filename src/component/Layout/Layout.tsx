@@ -2,6 +2,7 @@ import Head from "next/head"
 import { PropsWithChildren } from "react"
 import { Footer } from "../Footer/Footer"
 import { Header } from "../Header/Header"
+import s from "./Layout.module.scss"
 
 type PropsType = {
   title?: string
@@ -19,11 +20,13 @@ export const Layout: React.FC<PropsWithChildren<PropsType>> = ({children, title 
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       </Head>
 
-      <Header />
-      <main>
-        {children}
-      </main>
-      <Footer />
+      <div className={s.container}>
+        <Header />
+        <main className={s.main}>
+          {children}
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }
