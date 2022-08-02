@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { FaAddressBook, FaFolder, FaHome } from "react-icons/fa";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { Search } from '../../Search/Search';
 
 export const Dropdown: React.FC = () => {
 	const items = [
@@ -26,11 +27,14 @@ export const Dropdown: React.FC = () => {
 
 	return (
 		<div className={classNames(s.container, isOpened && s.container_opened)}>
+			<div className={s.search}>
+				<Search />
+			</div>
 			<ul className={s.list}>
 				{items.map((category, key) => {
 					return (
-						<li key={key} className={s.category}>
-							<ul>
+						<li key={key}>
+							<ul className={s.category}>
 								{category.map(item => {
 									const isActive = pathname === item.href;
 									return (
