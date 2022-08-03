@@ -16,7 +16,7 @@ export const Menu: React.FC = () => {
 			{items.map(item => {
 				const isActive = pathname === item.href;
 				return (
-					<li className={s.item}>
+					<li className={s.item} key={item.title}>
 						<Link href={item.href}>
 							<a className={classNames(s.link, isActive && s.link_active)}>{item.title}</a>
 						</Link>
