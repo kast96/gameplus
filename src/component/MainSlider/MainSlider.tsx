@@ -30,8 +30,8 @@ export const MainSlider: React.FC = () => {
 
 	return (
 		<Slider className={s.slider} {...settings}>
-			{items.map(item => (
-				<div>
+			{items.map((item, key) => (
+				<div key={key}>
 					<div className={s.item} style={{backgroundImage: `url("${item.image}")`}}>
 						<div className={classNames(s.container, 'container')}>
 							<div className={s.inner}>
