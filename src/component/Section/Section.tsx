@@ -5,7 +5,7 @@ import { Button } from '../ui/Button/Button'
 import s from './Section.module.scss'
 
 export type SectionPropsType = {
-	title: string
+	title?: string
 	detailLink?: string
 }
 
@@ -16,7 +16,9 @@ export const Section: React.FC<PropsWithChildren<SectionPropsType>> = ({children
 		<section className={s.section}>
 			<div className={classNames('container', s.container)}>
 				<div className={s.header}>
-					<h2 className={s.title}>{title}</h2>
+					{title && 
+						<h2 className={s.title}>{title}</h2>
+					}
 					{detailLink &&
 						<Button onClick={() => push(detailLink)}>Смотреть все</Button>
 					}
