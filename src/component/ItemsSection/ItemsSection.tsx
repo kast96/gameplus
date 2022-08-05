@@ -1,23 +1,18 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { GameType } from '../../data/gamesData'
 import { Section, SectionPropsType } from '../Section/Section'
 import s from './ItemsSection.module.scss'
 
-type ItemType = {
-  name: string
-  year: number
-  image: string
-  rating: number
-}
-
 type PropsType = {
-  items: Array<ItemType>
+  items: Array<GameType>
 }
 
 const ratingBreakpoints = {
   green: 80,
   orange: 50,
+  gray: 0,
 }
 
 export const ItemsSection: React.FC<SectionPropsType & PropsType> = ({title, detailLink, items}) => {
@@ -35,11 +30,12 @@ export const ItemsSection: React.FC<SectionPropsType & PropsType> = ({title, det
               <div 
                 className={classNames(
                   s.item_rating,
-                  item.rating > ratingBreakpoints.green && s.item_rating_green,
-                  item.rating < ratingBreakpoints.green && item.rating > ratingBreakpoints.orange && s.item_rating_orange,
-                  item.rating < ratingBreakpoints.orange && s.item_rating_red,
+                  item.rating >= ratingBreakpoints.green && s.item_rating_green,
+                  item.rating < ratingBreakpoints.green && item.rating >= ratingBreakpoints.orange && s.item_rating_orange,
+                  item.rating < ratingBreakpoints.orange && item.rating >= ratingBreakpoints.gray && s.item_rating_red,
+                  item.rating < ratingBreakpoints.gray && s.item_rating_gray,
                 )}
-              >{item.rating}</div>
+              >{item.rating >= ratingBreakpoints.gray ? item.rating : 'TBD'}</div>
             </div>
             <div>
               <Link href={'/'}>
